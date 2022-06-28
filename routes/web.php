@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [JadwalController::class, 'jadwal'])->name('jadwal');
+Route::get('/', [JadwalController::class, 'jadwal'])->name('show');
+Route::get('booking', [JadwalController::class, 'booking'])->name('booking');
+Route::post('booking', [JadwalController::class, 'store'])->name('store-j');
 
 Auth::routes();
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <table class="table">
+    <table class="table mt-3">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -13,11 +13,13 @@
         </thead>
         <tbody>
           <tr>
+            {{-- forech --}}
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-            <td>pesan</td>
-            <!-- icon pesan akan di berikan tombol pesan atau boking -->
+            <td>
+                <a href="{{ route('booking') }}" class="btn btn-primary">Booking</a>
+            </td>
           </tr>
         </tbody>
       </table>
