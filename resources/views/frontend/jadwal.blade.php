@@ -12,15 +12,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {{-- forech --}}
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+         @foreach ( $contacts as $key=>$item )
+         <tr>
+            <th scope="row">{{ $key+1 }}</th>
+            <td>{{ $item->field_name }}</td>
+            <td>{{ $item->price }}</td>
             <td>
                 <a href="{{ route('booking') }}" class="btn btn-primary">Booking</a>
             </td>
           </tr>
+         @endforeach
         </tbody>
       </table>
   </div>

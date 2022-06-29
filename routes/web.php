@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\JadwalController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [JadwalController::class, 'jadwal'])->name('show');
-Route::get('booking', [JadwalController::class, 'booking'])->name('booking');
+Route::get('/', [JadwalController::class, 'show'])->name('show');
+Route::get('booking', [JadwalController::class, 'create'])->name('booking');
 Route::post('booking', [JadwalController::class, 'store'])->name('store-j');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/lapangan', [App\Http\Controllers\HomeController::class, 'create'])->name('lapangan');
+Route::post('/lapangan', [HomeController::class, 'store'])->name('store-l');

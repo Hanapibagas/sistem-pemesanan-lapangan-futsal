@@ -3,17 +3,20 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Price;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
 {
-    public function jadwal()
+    public function show()
     {
-        return view('frontend.jadwal');
+        $contacts = Price::all();
+
+        return view('frontend.jadwal', compact('contacts'));
     }
 
-    public function booking()
+    function create()
     {
         return view('frontend.form');
     }
