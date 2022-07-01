@@ -29,6 +29,12 @@ class HomeController extends Controller
         return view('home', compact('jadwals'));
     }
 
+    public function list()
+    {
+        $jadwals = Schedule::all();
+        return view('frontend.info', compact('jadwals'));
+    }
+
     public function create()
     {
         return view('input');

@@ -23,5 +23,6 @@ Route::post('booking', [JadwalController::class, 'store'])->name('store-j');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/list-pemesan', [App\Http\Controllers\HomeController::class, 'list'])->name('list');
 Route::get('/lapangan', [App\Http\Controllers\HomeController::class, 'create'])->name('lapangan');
 Route::post('/lapangan', [HomeController::class, 'store'])->name('store-l');

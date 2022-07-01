@@ -39,6 +39,6 @@ class JadwalController extends Controller
             "status" => $request->input('status'),
         ]);
 
-        return redirect()->route('show');
+        return redirect()->route('list');
     }
 }
